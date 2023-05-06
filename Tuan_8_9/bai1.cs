@@ -1,0 +1,30 @@
+using System;
+using System.IO;
+
+namespace bai1
+{
+    class TestCsharp
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("\nChuong trinh ghi file trong C#");
+            Console.WriteLine("-----------------------------\n");
+            string sentence = " ";
+            StreamWriter myfile;
+            myfile = File.CreateText("test.txt");
+            do
+            {
+                Console.Write("Nhap mot cau text: ");
+                sentence = Console.ReadLine();
+                if (sentence.Length != 0)
+                {
+                    myfile.WriteLine(sentence);
+                }
+            }
+            while (sentence.Length != 0);
+            myfile.Close();
+
+            Console.ReadKey();
+        }
+    }
+}
